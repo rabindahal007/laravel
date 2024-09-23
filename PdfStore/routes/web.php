@@ -13,4 +13,5 @@ Route::post('/logout', [ProductController::class, 'logout'])->name('logout');
 Route::get('/edit/{book}', [ProductController::class, 'edit'])->name('edit');
 Route::put('/update/{book}', [ProductController::class, 'update'])->name('update');
 Route::delete('/destroy/{book}', [ProductController::class, 'destroy'])->name('destroy');
-
+Route::post('/import-books', [ProductController::class, 'import'])->name('import.books');
+Route::post('/store', [ProductController::class, 'store'])->name('store');

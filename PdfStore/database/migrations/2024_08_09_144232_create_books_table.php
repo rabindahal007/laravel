@@ -14,16 +14,14 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->text('Book_Name');
-            $table->text('Description');
-            $table->text('Book_Link');
-            $table->text('Category');
-            
-            $table->string('image')->nullable();
-           
-
+            $table->string('Book_Name');
+            $table->text('Description')->nullable();
+            $table->string('Category');
+            $table->string('Book_Link')->nullable(); // This field can be added later
+            $table->string('image')->nullable();     // This field can be added later
             $table->timestamps();
         });
+        
     }
 
     /**

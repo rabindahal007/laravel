@@ -24,7 +24,7 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Adds a deeper shadow on hover */
         }
         .col-md-3 {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         .search-bar {
             margin: 20px 0;
@@ -132,6 +132,21 @@
     @if($errors->has('login_failed'))
     <div class="alert alert-danger">
         {{ $errors->first('login_failed') }}
+    </div>
+    @endif
+
+    <!-- Import Form -->
+    @if(session('user'))
+    <div class="container mt-4">
+        <h3>Import Books</h3>
+        <form action="{{ route('import.books') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+                <label for="file">Upload CSV File:</label>
+                <input type="file" name="file" id="file" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Import Books</button>
+        </form>
     </div>
     @endif
 
